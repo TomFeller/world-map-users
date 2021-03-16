@@ -1,5 +1,9 @@
-.map {
-display: flex;
+.overview {
+  display: flex;
   flex-direction: column;
   align-items: center;
+}
+.map {
+  max-width: 100vw;
+  overflow: auto;
 }

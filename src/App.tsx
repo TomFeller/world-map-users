@@ -8,7 +8,6 @@ import './scss/app.scss';
 const App = () => {
     return (
         <CountriesProvider>
-
             <div className={"app-body"}>
                 <Router>
                     <AppSidebar/>
