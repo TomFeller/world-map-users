@@ -1,0 +1,11 @@
+.app-body {
+  display: flex;
+}
+
+.field {
+  &.error {
+    input {
+      background-color: red;
+    }
+  }
+}
