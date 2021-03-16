@@ -1,0 +1,49 @@
+.form {
+  padding: 0 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  button {
+    width: 100%;
+    display: block;
+    padding: 15px 20px;
+    background-color: royalblue;
+    color:#fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .field {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+     justify-content: center;
+    input {
+      border: 1px solid #000;
+      height: 30px;
+      padding-left: 5px;
+
+    }
+    &.error {
+      input {
+        background-color: red;
+      }
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+  }
+  &-success-actions {
+    display: flex;
+    justify-content: space-around;
+    button {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+

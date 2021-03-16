@@ -1,5 +1,4 @@
 import Swal from 'sweetalert2';
-// import "./swal.scss";
 import _ from "lodash"
 
 const API = "http://13.69.54.84:9000/users";

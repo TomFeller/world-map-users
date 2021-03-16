@@ -1,0 +1,16 @@
+.sidebar {
+  background-color: #222;
+  padding: 0 30px;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    padding: 10px 0;
+  }
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

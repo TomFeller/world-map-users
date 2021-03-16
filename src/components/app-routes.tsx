@@ -5,12 +5,12 @@ import {Form} from "./form";
 
 export const AppRoutes = () => {
     return (
-        <div>
+        <div className="app-routes">
             <Switch>
-                <Route path={"/map"}>
+                <Route path="/map">
                     <Map/>
                 </Route>
-                <Route path={"/form"}>
+                <Route path="/form">
                     <Form/>
                 </Route>
             </Switch>

@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import Chart from "react-google-charts";
-import {CountriesContext, ICountry} from "../providers/countries-provider";
+import {CountriesContext} from "../providers/countries-provider";
+import {AppHeader} from "./app-header";
 
 
 export const Map = () => {
@@ -12,21 +13,25 @@ export const Map = () => {
     ];
 
      return (
-        <Chart
-            width={'1000px'}
-            height={'510px'}
-            chartType="GeoChart"
-            data={chartData}
-            mapsApiKey="AIzaSyCij7stMb27jg45QNDLx_7aKzz-oqDytfU"
+         <div className={"map"}>
+             <AppHeader/>
+             <Chart
+                 width={'100%'}
+                 height={'510px'}
+                 chartType="GeoChart"
+                 data={chartData}
+                 mapsApiKey="AIzaSyCij7stMb27jg45QNDLx_7aKzz-oqDytfU"
 
-            options={{
-                // region: '002', // Africa
-                explorer:{maxZoomOut:98},
-                colorAxis: { colors: ['#999999', '#666666', '#333333'] },
-                backgroundColor: '#81d4fa',
-                datalessRegionColor: '#f3f3f3',
-                defaultColor: '#f5f5f5',
-            }}
-            rootProps={{ 'data-testid': '1' }}/>
+                 options={{
+                     // region: '002', // Africa
+                     explorer:{maxZoomOut:98},
+                     colorAxis: { colors: ['#999999', '#666666', '#333333'] },
+                     backgroundColor: '#81d4fa',
+                     datalessRegionColor: '#f3f3f3',
+                     defaultColor: '#f5f5f5',
+                 }}
+                 rootProps={{ 'data-testid': '1' }}/>
+         </div>
+
     )
 };

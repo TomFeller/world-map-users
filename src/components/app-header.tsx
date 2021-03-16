@@ -5,7 +5,7 @@ export const AppHeader: FC = (): JSX.Element  => {
     const {totalUsers} = useContext(CountriesContext)
 
      return (
-        <div>
+        <div className={"map-header"}>
             Total Users: <span>{totalUsers}</span>
         </div>
     )

@@ -38,11 +38,14 @@ export const CountriesProvider: FC = ({children}): JSX.Element => {
         setIsLoading(false);
     };
     
-    const addNewCountry = async (country:ICountry) => {
+    const addNewCountry = async (country:ICountry, cb: Function) => {
         await fetchData(
             POST,
             country,
-            (response) => handleFetchSuccess([...countries, {...country}])
+            (response) => {
+                handleFetchSuccess([...countries, {...country}]);
+                    cb(response.status)
+            }
         );
     };
 
