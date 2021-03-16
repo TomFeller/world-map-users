@@ -15,6 +15,7 @@ export const Overview = () => {
      return (
          <div className={"map"}>
              <AppHeader/>
+             <div style={{maxWidth: "100vw",overflow:"auto"}}>
              <Chart
                  width={'800px'}
                  height={'510px'}
@@ -23,14 +24,13 @@ export const Overview = () => {
                  mapsApiKey="AIzaSyCij7stMb27jg45QNDLx_7aKzz-oqDytfU"
 
                  options={{
-                     // region: '002', // Africa
-                     explorer:{maxZoomOut:98},
                      colorAxis: { colors: ['#999999', '#666666', '#333333'] },
                      backgroundColor: '#81d4fa',
                      datalessRegionColor: '#f3f3f3',
                      defaultColor: '#f5f5f5',
                  }}
                  rootProps={{ 'data-testid': '1' }}/>
+             </div>
          </div>
 
     )
