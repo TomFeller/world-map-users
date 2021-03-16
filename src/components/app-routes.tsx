@@ -10,7 +10,7 @@ export const AppRoutes = () => {
                 <Route path={"/map"}>
                     <Map/>
                 </Route>
-                <Route path={"form"}>
+                <Route path={"/form"}>
                     <Form/>
                 </Route>
             </Switch>

@@ -17,15 +17,12 @@ export const Map = () => {
             height={'510px'}
             chartType="GeoChart"
             data={chartData}
-            // Note: you will need to get a mapsApiKey for your project.
-            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
             mapsApiKey="AIzaSyCij7stMb27jg45QNDLx_7aKzz-oqDytfU"
-            // magnifyingGlass={{enable:true}}
 
             options={{
                 // region: '002', // Africa
                 explorer:{maxZoomOut:98},
-                colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
+                colorAxis: { colors: ['#999999', '#666666', '#333333'] },
                 backgroundColor: '#81d4fa',
                 datalessRegionColor: '#f3f3f3',
                 defaultColor: '#f5f5f5',

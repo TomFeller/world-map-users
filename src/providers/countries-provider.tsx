@@ -1,12 +1,12 @@
-import React, { FC, useEffect, useState} from "react";
+import React, {FC, useCallback, useEffect, useState} from "react";
+import {fetchData, GET, POST} from "../helpers/fetch-data";
 
-const API = "http://13.69.54.84:9000/users";
-
-const defaultValue = {countries: [], totalUsers: 0};
+const defaultValue = {countries: [], totalUsers: 0, addNewCountry: () => {}};
 
 type ContextType = {
     countries: ICountry[],
-    totalUsers: number
+    totalUsers: number,
+    addNewCountry: Function
 }
 
 export const CountriesContext = React.createContext<ContextType>(defaultValue);
@@ -17,25 +17,38 @@ export interface ICountry {
 
 }
 
-export const CountriesProvider: FC = ({children}): JSX.Element  => {
+export const CountriesProvider: FC = ({children}): JSX.Element => {
     const [countries, setCountries] = useState<ICountry[] | []>([]);
     const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        fetch(API).then(
-            response => response.ok && response.json()
-        ).then(
-            success => {
-                setCountries(success);
-                setIsLoading(false);
-            }
-        )
+    
+    const getAllCountries = useCallback(async () => {
+        await fetchData(
+            GET, "",
+            handleFetchSuccess
+        );
     }, []);
+    
+    useEffect(() => {
+        getAllCountries();
+    }, [getAllCountries]);
+    
+    const handleFetchSuccess = (countries: ICountry[] ) => {
 
-    const provider = {
-        countries:countries,
-        totalUsers: countries.map((country:ICountry) => country.users).reduce((a, b) => a + b, 0)
-    }
+        setCountries(countries);
+        setIsLoading(false);
+    };
+    
+    const addNewCountry = async (country:ICountry) => {
+        await fetchData(
+            POST,
+            country,
+            (response) => handleFetchSuccess([...countries, {...country}])
+        );
+    };
+
+    const totalUsers = countries.map((country: ICountry) => country.users || 0).reduce((a, b) => parseInt("" + a) + parseInt("" + b), 0);
+
+    const provider = {countries, totalUsers, addNewCountry};
 
     if (isLoading) {
         return <div>...</div>
