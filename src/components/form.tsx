@@ -55,7 +55,7 @@ export const Form = () => {
             <p>{USERS}: {users}</p>
             <div className={"form-success-actions"}>
                 <button onClick={handleReset}>{ADD_COUNTRY}</button>
-                <button><Link to={"map"}>{GO_TO_MAP}</Link></button>
+                <button><Link to={"/"}>{GO_TO_MAP}</Link></button>
             </div>
         </div>
     );

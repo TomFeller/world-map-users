@@ -5,8 +5,8 @@ export const AppSidebar = () => {
     return (
         <div className="sidebar">
             <ul>
-                <li><Link to="/map">MAP</Link></li>
-                <li><Link to="/form">FORM</Link></li>
+                <li><Link to="/">MAP</Link></li>
+                <li><Link to="/add-new">FORM</Link></li>
             </ul>
         </div>
     )
