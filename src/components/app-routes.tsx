@@ -1,6 +1,6 @@
 import React from "react";
 import {Route, Switch, Redirect} from "react-router-dom";
-import {Map} from "./map";
+import {Overview} from "./overview";
 import {Form} from "./form";
 
 export const AppRoutes = () => {
@@ -8,14 +8,14 @@ export const AppRoutes = () => {
         <div className="app-routes">
             <Switch>
                 <Route exact path="/">
-                    <Map/>
+                    <Overview/>
                 </Route>
                 <Route exact path="/add-new">
                     <Form/>
                 </Route>
             </Switch>
             <Redirect to="/">
-                <Map/>
+                <Overview/>
             </Redirect>
         </div>
     )

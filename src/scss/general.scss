@@ -3,9 +3,12 @@ a {
   text-decoration: none;
 }
 .app-body {
-  display: flex;
+  display: block;
   height: 100vh;
   width: 100%;
+  @media (min-width: 600px) {
+  display: flex;
+  }
 }
 .app-routes {
   flex:1;

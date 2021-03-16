@@ -4,7 +4,7 @@ import {CountriesContext} from "../providers/countries-provider";
 import {AppHeader} from "./app-header";
 
 
-export const Map = () => {
+export const Overview = () => {
     const {countries} = useContext(CountriesContext);
 
     const chartData = [
@@ -16,7 +16,7 @@ export const Map = () => {
          <div className={"map"}>
              <AppHeader/>
              <Chart
-                 width={'100%'}
+                 width={'800px'}
                  height={'510px'}
                  chartType="GeoChart"
                  data={chartData}
