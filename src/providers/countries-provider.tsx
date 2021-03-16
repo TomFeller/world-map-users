@@ -29,7 +29,10 @@ export const CountriesProvider: FC = ({children}): JSX.Element => {
     }, []);
     
     useEffect(() => {
-        getAllCountries();
+        fetchData(
+            GET, "",
+            handleFetchSuccess
+        );
     }, [getAllCountries]);
     
     const handleFetchSuccess = (countries: ICountry[] ) => {

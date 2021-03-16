@@ -22,7 +22,6 @@ export const Overview = () => {
                     chartType="GeoChart"
                     data={chartData}
                     mapsApiKey="AIzaSyCij7stMb27jg45QNDLx_7aKzz-oqDytfU"
-
                     options={{
                         colorAxis: {colors: ['#999999', '#666666', '#333333']},
                         backgroundColor: '#81d4fa',
